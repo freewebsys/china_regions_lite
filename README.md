@@ -1,3 +1,23 @@
+# 原始项目
+
+https://github.com/wecatch/china_regions
+
+主要项目代码是china_regions，在此基础上，增加了make_region.py 脚本。
+创建了mysql-region 文件夹。使用 6 位区号。mysql使用一张表
+
+```
+CREATE TABLE `region` (
+  `id` varchar(10) NOT NULL COMMENT '地区编号',
+  `name` varchar(50) NOT NULL COMMENT '地区名称',
+  `parent_id` varchar(10) DEFAULT NULL COMMENT '地区父id',
+  `level` int(2) DEFAULT NULL COMMENT ' 1-省、自治区、直辖市 2-地级市, 3-市辖区、县',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='地区表';
+```
+
+使用地区编号做主键，6位的号。
+
+
 # china_regions
 
 最全最新中国省，市，地区 json 及 sql 数据，自动抓取国标 http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/ 数据，并且自动生成 JavaScript es6 module 以及 sql 数据。
