@@ -16,7 +16,7 @@ CREATE TABLE `region` (
 
 """
 
-sql_tmp =  "INSERT INTO region ('id', 'name', 'parent_id', 'level') VALUES ('%s', '%s', '%s', '%s');\n"
+sql_tmp =  "INSERT IGNORE INTO region (`id`, `name`, `parent_id`, `level`) VALUES ('%s', '%s', '%s', '%s');\n"
 region_path = "mysql-region"
 
 def make_data():
